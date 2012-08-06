@@ -1,0 +1,35 @@
+<h2>NAME</h2>
+
+<p>forkhandle</p>
+
+<h2>SYNOPSIS</h2>
+
+<p>connection = ForkHandle.get(:db_connection){ Db.connect(config) }</p>
+
+<h2>DESCRIPTION</h2>
+
+<p>managing connection across forks and threads is tricky.  most libraries use
+  and icky idiom that requires each and every client to configure it&#39;s own
+  forking logic, something like</p>
+<div class="highlight"><pre><span class="no">MyLameLib</span><span class="o">.</span><span class="n">after_fork</span> <span class="k">do</span>
+
+  <span class="c1"># close handles you should close</span>
+
+<span class="k">end</span>
+</pre>
+</div>
+
+<p>many libs also do not provide you with per-thread connection, making MT a
+  manual process.</p>
+
+<p>a teeny bit of code can solve both.  the concept is simple:</p>
+
+<p>maintain a table of connections scoped by process id and thread id.  any
+  miss will trigger auto-scrubbing the table, but only connections from
+  another process (we&#39;ve been forked) will be closed.  this gives</p>
+
+<ul>
+<li><p>per thread connections</p></li>
+<li><p>per process connections</p></li>
+<li><p>auto-matic cleanup after a fork</p></li>
+</ul>
