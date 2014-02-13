@@ -1,6 +1,10 @@
 module ForkHandle
   def version
-    '0.0.1'
+    '0.0.2'
+  end
+
+  def description
+    "a teeny library / design pattern for managing connections in a process and thread safe fashion"
   end
 
   @handles = Hash.new

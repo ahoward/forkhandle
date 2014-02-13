@@ -3,13 +3,14 @@
 
 Gem::Specification::new do |spec|
   spec.name = "forkhandle"
-  spec.version = "0.0.1"
+  spec.version = "0.0.2"
   spec.platform = Gem::Platform::RUBY
   spec.summary = "forkhandle"
-  spec.description = "description: forkhandle kicks the ass"
+  spec.description = "a teeny library / design pattern for managing connections in a process and thread safe fashion"
+  spec.license = "same as ruby's"
 
   spec.files =
-["Rakefile", "forkhandle.gemspec", "lib", "lib/forkhandle.rb"]
+["README.md", "Rakefile", "forkhandle.gemspec", "lib", "lib/forkhandle.rb"]
 
   spec.executables = []
   
