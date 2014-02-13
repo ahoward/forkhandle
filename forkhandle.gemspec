@@ -6,7 +6,7 @@ Gem::Specification::new do |spec|
   spec.version = "0.0.1"
   spec.platform = Gem::Platform::RUBY
   spec.summary = "forkhandle"
-  spec.description = "description: forkhandle kicks the ass"
+  spec.description = "a teeny library / design pattern for managing connections in a process and thread safe fashion"
 
   spec.files =
 ["Rakefile", "forkhandle.gemspec", "lib", "lib/forkhandle.rb"]
