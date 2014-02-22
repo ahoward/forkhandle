@@ -3,7 +3,7 @@
 
 Gem::Specification::new do |spec|
   spec.name = "forkhandle"
-  spec.version = "0.0.2"
+  spec.version = "0.0.3"
   spec.platform = Gem::Platform::RUBY
   spec.summary = "forkhandle"
   spec.description = "a teeny library / design pattern for managing connections in a process and thread safe fashion"
@@ -18,8 +18,7 @@ Gem::Specification::new do |spec|
 
   spec.test_files = nil
 
-### spec.add_dependency 'lib', '>= version'
-#### spec.add_dependency 'map'
+  
 
   spec.extensions.push(*[])
 
